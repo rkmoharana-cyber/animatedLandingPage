@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body {
+            width: 100%;
+            height: 100%;
+        }
+        #main {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(222, 184, 135, 0.75);
+        }
+        #center {
+            position: absolute;
+            left: 20%;
+            top: 50%;
+            transform: translate(0%,-50%);
+            width: 60%;
+            height: 80%;
+        }
+        .imagecontainer {
+            overflow: hidden;
+            width: 0%;
+            height: 100%;
+            position: absolute;
+        }
+        img {
+            height: 100%;
+            object-fit: cover;
+        }
+        #one {
+            width: 0%;
+        }
+        .text {
+            position: absolute;
+            bottom: 12%;
+            left: -10%;
+            z-index: 1;
+            overflow: hidden;
+            width: 280px;
+            height: 110px;
+            color: #fff;
+        }
+        .text h1 {
+            font-size: 6vw;
+            position: absolute;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <div id="center">
+            <div class="text">
+                <h1>Arch.</h1>
+                <h1>Bridge.</h1>
+                <h1>Bird.</h1>
+            </div>
+            <div id="one" class="imagecontainer">
+                <img src="https://images.unsplash.com/photo-1592193081050-b3aa4284a7b0?auto=format&fit=crop&q=80&w=1469&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+            </div>
+            <div class="imagecontainer">
+                <img src="https://images.unsplash.com/photo-1560964645-5296b5099677?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+            <div class="imagecontainer">
+                <img src="https://images.unsplash.com/photo-1698765141491-4feee29e0f8c?auto=format&fit=crop&q=80&w=1470&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        var tl = gsap.timeline({
+            repeat: -1
+        });
+
+        tl
+        .to(".imagecontainer", {
+            ease: Expo.easeInOut,
+            width: "100%",
+            stagger: 2
+        }, 'papuni')
+        .to(".text h1", {
+            ease: Expo.easeInOut,
+            top: 0,
+            stagger: 2
+        }, 'papuni')
+        .to(".text h1", {
+            delay: 2,
+            ease: Expo.easeInOut,
+            top: "-100%",
+            stagger: 2
+        }, 'papuni')
+    </script>
+
+</body>
+</html>
